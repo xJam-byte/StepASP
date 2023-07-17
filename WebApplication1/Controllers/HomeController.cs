@@ -46,8 +46,20 @@ namespace WebApplication1.Controllers
       Response.ContentType = "text/html;charset=utf-8";
       await Response.WriteAsync(content);
     }
-    
-    [HttpPost]
+
+    [HttpGet]
+    public ActionResult<Dictionary<string, string>> GetAllHeaders()
+    {
+        Dictionary<string, string> requestHeaders =
+        new Dictionary<string, string>();
+        foreach (var header in Request.Headers)
+        {
+            requestHeaders.Add(header.Key, header.Value);
+        }
+        return requestHeaders;
+    }
+
+        [HttpPost]
     public string GetUsers(string username, int age) {
       return $"{username}:{age}";      
     }

@@ -23,6 +23,22 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        //HOME WORK 2
+
+        [HttpGet]
+        public ActionResult<Dictionary<string, string>> GetAllHeaders()
+        {
+            Dictionary<string, string> requestHeaders =
+            new Dictionary<string, string>();
+            foreach (var header in Request.Headers)
+            {
+                requestHeaders.Add(header.Key, header.Value);
+            }
+            return requestHeaders;
+        }
+
+
+
         // POST: AdminController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
