@@ -78,7 +78,7 @@ namespace WebApplication1.Controllers
     }
 
     public IActionResult RedirectExample() {
-      return Redirect("~/home/ContentExample");
+      return Redirect("~/home/Index");
     }
 
     public IActionResult FileExample() {
