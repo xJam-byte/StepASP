@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplication1.Controllers
 {
-    public class AccontController : Controller
+    public class AccountController : Controller
     {
         // GET: AccontController
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View();
         }
@@ -63,6 +63,21 @@ namespace WebApplication1.Controllers
         public ActionResult Delete(int id)
         {
             return View();
+        }
+        public IActionResult Main()
+        {
+            return View();
+        }public IActionResult Login()
+        {
+            return Redirect("~/home/Index");
+        }
+        public IActionResult Register()
+        {
+            return Redirect("~/home/Index");
+        }
+        public IActionResult Logout()
+        {
+            return Redirect("~/home/Index");
         }
 
         // POST: AccontController/Delete/5

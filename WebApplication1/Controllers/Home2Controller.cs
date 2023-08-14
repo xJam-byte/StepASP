@@ -25,6 +25,10 @@ namespace WebApplication1.Controllers
     public IActionResult Main()
     {
       return View();
+    }    
+    public IActionResult Red()
+    {
+      return Redirect("~/home/Index");
     }
 
 
